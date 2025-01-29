@@ -13,7 +13,7 @@ public class Mammal {
     protected String bodyTemp;
     protected String height;
     protected String weight;
-    protected String birthday;
+    protected String age;
 
 public void mammal(String name){
 
