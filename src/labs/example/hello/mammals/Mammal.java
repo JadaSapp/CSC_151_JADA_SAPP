@@ -23,13 +23,17 @@ public void setName (String name){
     this.name = name;
 }
 
+public void eat (){
+    System.out.println(this.name + "is eating, tasty food!")
+}
+
  public void run(){
     System.out.println(this.name + "is running, where to?")
-  }
+}
 
  public void sleep (){
     System.out.println(this.name + "is asleep. peaceful dreams.")
- }
+}
 
 public void scratch(){
     System.out.println(this.name + "is scratching, be careful!")
