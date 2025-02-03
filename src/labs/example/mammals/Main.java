@@ -4,11 +4,11 @@
 @purpose: Naming a mammal/Week 4 VSCODE
 */
 
-pacakge labs.example.mammals;
+package labs.example.mammals;
 
 public class Main {
-    public static void main(String{} args){
-        Mammal mammal = new Mammal();
+    public static void main(String[] args;){;
+        Mammal mammal=new Mammal();
 
         mammal.setName("Dog");
         mammal.eat();
