@@ -14,6 +14,7 @@ public class Mammal {
     protected String height;
     protected String weight;
     protected String age;
+    protected String name;
 
 public void mammal(String name){
 
