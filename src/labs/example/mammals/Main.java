@@ -7,8 +7,8 @@
 package labs.example.mammals;
 
 public class Main {
-    public static void main(String[] args;){;
-        Mammal mammal=new Mammal();
+    public static void main(String[] args){;
+        Main mammal=new.mammal();
 
         mammal.setName("Dog");
         mammal.eat();

@@ -20,13 +20,14 @@ public void mammal(String name){
 
 }
 
+///Need to readd "protected string"??
 public void getMammalDetails(){
-    System.out.println(this.name + "hair color is" + String hairColor;)
-    System.out.println(this.name + "eye color is" + String eyeColor;)
-    System.out.println(this.name + "body temperature is" + String bodyTemp;)
-    System.out.println(this.name + "height is" + String height;)
-    System.out.println(this.name + "weight is" +; String weight;)
-    System.out.println(this.name + "age is" + String age;)
+    System.out.println(this.name + "hair color is");
+    System.out.println(this.name + "eye color is");
+    System.out.println(this.name + "body temperature is");
+    System.out.println(this.name + "height is");
+    System.out.println(this.name + "weight is");
+    System.out.println(this.name + "age is");
 }
 
 public void sit(){
