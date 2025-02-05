@@ -34,67 +34,67 @@ public void setName (String name){
 }
 
 public void sit (){
-    System.out.println(this.name + "is sitting.");
+    System.out.println(this.name + " is sitting.");
 }
 
 public void stand (){
-    System.out.println(this.name + "is standing.");
+    System.out.println(this.name + " is standing.");
 }
 
 public void eat (){
-    System.out.println(this.name + "is eating, tasty food!");
+    System.out.println(this.name + " is eating, tasty food!");
 }
 
  public void run(){
-    System.out.println(this.name + "is running, where to?");
+    System.out.println(this.name + " is running, where to?");
 }
 
  public void sleep (){
-    System.out.println(this.name + "is asleep. peaceful dreams.");
+    System.out.println(this.name + " is asleep. peaceful dreams.");
 }
 
 public void scratch(){
-    System.out.println(this.name + "is scratching, be careful!");
+    System.out.println(this.name + " is scratching, be careful!");
 }
 
 public void fly(){
-    System.out.println(this.name + "is flying, the places they can go!");
+    System.out.println(this.name + " is flying, the places they can go!");
 }
 
 public void hunt(){
-    System.out.println(this.name + "is hunting, make sure to not be spotted!");
+    System.out.println(this.name + " is hunting, make sure to not be spotted!");
 }
 
 public void stalk(){
-    System.out.println(this.name + "is stalking, they will now move slow and carefully.");
+    System.out.println(this.name + " is stalking, they will now move slow and carefully.");
 }
 
 public void locate(){
-    System.out.println(this.name + "is locating, who are they trying to find?");
+    System.out.println(this.name + " is locating, who are they trying to find?");
 }
 
 public void migrate(){
-    System.out.println(this.name + "is migrating, where will be their next home?");
+    System.out.println(this.name + " is migrating, where will be their next home?");
 }
 
 public void pollinate(){
-    System.out.println(this.name + "is pollinating, time to protect the plants!");
+    System.out.println(this.name + " is pollinating, time to protect the plants!");
 }
 
 public void swim(){
-    System.out.println(this.name + "is swimming, the water can allow you to travel far!");
+    System.out.println(this.name + " is swimming, the water can allow you to travel far!");
 }
 
 public void haul(){
-    System.out.println(this.name + "is hauling, their body temperature is beginning to regulate.");
+    System.out.println(this.name + " is hauling, their body temperature is beginning to regulate.");
 }
 
 public void molt(){
-    System.out.println(this.name + "is molting, their fur will stay healthy!");
+    System.out.println(this.name + " is molting, their fur will stay healthy!");
 }
 
 public void dive(){
-    System.out.println(this.name + "is diving, what food will they find?");
+    System.out.println(this.name + " is diving, what food will they find?");
 
 }
 

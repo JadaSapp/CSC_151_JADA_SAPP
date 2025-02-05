@@ -12,7 +12,8 @@ public class Main {
         mammal.setName("Dog");
         mammal.eat();
         mammal.sit();
-            Thread.sleep(1500);
+            Thread.sleep(15000);
+        mammal.stand();
 
     }
 
