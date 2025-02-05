@@ -20,7 +20,6 @@ public void mammal(String name){
 
 }
 
-///Need to readd "protected string"??
 public void getMammalDetails(){
     System.out.println(this.name + "hair color is");
     System.out.println(this.name + "eye color is");
@@ -30,12 +29,16 @@ public void getMammalDetails(){
     System.out.println(this.name + "age is");
 }
 
-public void sit(){
+public void setName (String name){
+    this.name = name;
+}
+
+public void sit (){
     System.out.println(this.name + "is sitting.");
 }
 
-public void setName (String name){
-    this.name = name;
+public void stand (){
+    System.out.println(this.name + "is standing.");
 }
 
 public void eat (){
