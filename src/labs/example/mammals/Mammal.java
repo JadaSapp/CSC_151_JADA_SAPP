@@ -98,4 +98,7 @@ public void dive(){
 
 }
 
+public void bark(){
+    System.out.println(this.name + "is barking.");
+    
 }
