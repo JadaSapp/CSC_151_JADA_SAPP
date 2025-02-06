@@ -10,10 +10,11 @@ public class Main {
         Mammal mammal = new Mammal();
 
         mammal.setName("Dog");
-        mammal.eat();
         mammal.sit();
             Thread.sleep(15000);
         mammal.stand();
+            Thread.sleep(5000);
+        mammal.bark();
 
     }
 
