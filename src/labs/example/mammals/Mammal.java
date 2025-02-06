@@ -99,12 +99,7 @@ public void dive(){
 }
 
 public void bark(){
-<<<<<<< HEAD
     System.out.println(this.name + " is barking.");
 }
 
-=======
-    System.out.println(this.name + "is barking.");
-    
->>>>>>> 933e4e40155e975eb7190cfa9cf22ef7bdc477c2
 }
