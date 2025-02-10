@@ -15,9 +15,7 @@ public class Main {
         mammal.stand();
             Thread.sleep(5000);
         mammal.bark();
-        mammal.scratch();
-        mammal.hunt();
-        mammal.swim();
+
     }
 
 }
