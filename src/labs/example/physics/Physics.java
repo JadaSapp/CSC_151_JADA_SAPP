@@ -9,34 +9,30 @@ import java.lang.Math;
 public class Physics { 
 
     public double getDistance (double inital velocity, double time){
-        return
+        return x;
     }
 
     public double getVelocity (double){
-        return
+        return v;
     }
 
     public double getMomentum (double momentum, double velocity){
-        return
+        return p; 
     }
 
     public double getForce (double momentum){
-        return
+        return f;
     }
 
     public double getWork (double force, double distance){
-        return
+        return w;
     }
 
     public double getKineticEnergy (double mass1, double mass2, double distance){
-        return
+        return ke;
     }
 
     public double getPotentialEnergy (double mass, double force){
-        return
-    }
-
-    public double gravity (double momentum){
-        return
+        return pe;
     }
 }
