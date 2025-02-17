@@ -56,4 +56,22 @@ public class Physics {
         pe = m*GRAVITY*h;
         return pe;
     }
+
+      public static double getLightSpeedInMPH(double c, double n){
+        double ls;
+       ls = c * n;
+       return ls;
+    }
+
+    public double getTimeFromSunToEarthInHours(double d, double c){
+        double ste;
+        ste = d / c;
+        return ste;
+    }
+
+    public static double getKnownDistanceToEarth(){
+        double dte;
+        dte = 92947266.72;
+        return dte;
+    } 
 }

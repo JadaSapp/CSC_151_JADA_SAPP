@@ -17,6 +17,8 @@ public class Main {
         System.out.println("The work would be: " + physics.getForce(9,8) + "Joules");
         System.out.println("The kinetic energy would be: " + physics.getKineticEnergy(6,5) + "Joules");
         System.out.println("The potential energy would be: " + physics.getPotentialEnergy(4,8) + "Joules");
+        System.out.println("The light speed is: " + physics.getLightSpeedInMPH(9,2) + "mph");
+        System.out.println("The time to reach the Earth from the sun is: " + physics.getTimeFromSunToEarthInHours(2,7) + "hours");
     }
 
 }
