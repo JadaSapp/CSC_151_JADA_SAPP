@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Physics physics = new Physics();
 
+        /*
         System.out.println("The distance would be: " + physics.getDistance(3,9) + "miles");
         System.out.println("The velocity would be: " + physics.getVelocity(9,10) + "mph");
         System.out.println("The momentum would be: " + physics.getMomentum(20,1) + "kg m/s");
@@ -17,8 +18,27 @@ public class Main {
         System.out.println("The work would be: " + physics.getForce(9,8) + "Joules");
         System.out.println("The kinetic energy would be: " + physics.getKineticEnergy(6,5) + "Joules");
         System.out.println("The potential energy would be: " + physics.getPotentialEnergy(4,8) + "Joules");
-        System.out.println("The light speed is: " + physics.getLightSpeedInMPH(9,2) + "mph");
-        System.out.println("The time to reach the Earth from the sun is: " + physics.getTimeFromSunToEarthInHours(2,7) + "hours");
-    }
+        */
+       Double angle = physics.getTheta(9,5);
+       System.out.println(angle);
 
+       if(angle > 37 || angle < 36.87){
+        physics.logValidAngleInfo(angle);
+       }
+       else{
+        physics.logInvalidAngleInfo(angle);
+       }
+
+        Double travels = physics.getDistance(5,9);
+        System.out.println(travels);
+
+       if (travels != physics.getKnownDistanceToEarth()){
+        physics.logEarthToSunInvalidDistance();
+       }
+       else{
+        System.out.println("The calculated distance is valid.");
+       }
+
+
+    }
 }

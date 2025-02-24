@@ -53,25 +53,44 @@ public class Physics {
 
     public double getPotentialEnergy(double m, double h){
         double pe;
-        pe = m*GRAVITY*h;
+        pe = m * GRAVITY * h;
         return pe;
     }
 
-      public static double getLightSpeedInMPH(double c, double n){
-        double ls;
-       ls = c * n;
-       return ls;
+    public static double getTheta(int xVal, int yVal){
+        double theta = Math.atan2(xVal,yVal) * 180/3.1415;
+        return theta;
     }
 
-    public double getTimeFromSunToEarthInHours(double d, double c){
-        double ste;
-        ste = d / c;
-        return ste;
+    public void logInvalidAngleInfo(double angle){
+        System.out.println("logging the angle " + String.format("%.2f ",angle) + "degrees. This is not the right angle.");
+    }
+
+    public void logValidAngleInfo(double angle){
+        System.out.println("logging the angle " + String.format("%.2f ",angle) + "degrees. This is a valid 3-4-5 triangle");
+    }
+
+    public static double getLightSpeedInMPH(){
+        double lightspeed = getSpeedOfLightInMPHS() * 3600;
+        return lightspeed;
+    }
+
+    public static double getTimeFromSunToEarthInHours(){
+        double timeToEarth = (getKnownDistanceToEarth() / getSpeedOfLightInMPHS()) / 3600;
+        return timeToEarth;
+    }
+
+    public void logEarthToSunInvalidDistance(){
+        System.out.println("The calculated distance from the Earth to the Sun is invalid.");
+    }
+
+    public static double getSpeedOfLightInMPHS(){
+        double c = 186282;
+        return c;
     }
 
     public static double getKnownDistanceToEarth(){
-        double dte;
-        dte = 92947266.72;
-        return dte;
-    } 
+        double time = 92947266.72;
+        return time;
+    }
 }
