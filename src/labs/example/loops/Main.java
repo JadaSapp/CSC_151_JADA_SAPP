@@ -5,3 +5,10 @@
 */
 
 package labs.example.loops;
+
+public class Main {
+  public static void main(String[] args){
+    Loops loops = new loop();
+    loops.loop(10);
+    }
+}
