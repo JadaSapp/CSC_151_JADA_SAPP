@@ -77,6 +77,30 @@ public class ArrayProgram{
     }
 
     public void creditCardChecker(){
+        int [] cardNumber = {4, 7, 6, 0, 4, 9, 9, 9, 6, 6, 8, 4, 9, 7, 5, 0};
+        int [] workingCardNumber = {4, 7, 6, 0, 4, 9, 9, 9, 6, 6, 8, 4, 9, 7, 5, 0};
+        int summedNumber = 0;
+        for (int x = cardNumber.length -2; x + 1 > 0; x = x-2){
+            workingCardNumber[x] = cardNumber[x] * 2;
+            if(workingCardNumber[x] > 9){
+                workingCardNumber[x] = (workingCardNumber[x] % 10) + 1;
+            }
+        }
 
+        for(int x = 0; x < workingCardNumber.length; x++){
+            summedNumber = workingCardNumber[x] + summedNumber;
+        }
+
+        System.out.println("Credit Card ");
+        for(int x = 0; x < cardNumber.length; x++){
+            System.out.print(cardNumber[x]);
+        }
+
+        if((summedNumber % 10) == 0){
+            System.out.print(" is valid. \n");
+        }
+        else{
+            System.out.print(" is NOT valid. \n");
+        }
     }
 }
