@@ -48,6 +48,7 @@ public class Logger{
     return br;
     }
 
+    
     private static void getCountOfErrorTypes(BufferedReader file) throws IOException{
         int error_count = 0;
         int warn_count = 0;
