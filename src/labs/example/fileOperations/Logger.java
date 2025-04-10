@@ -16,13 +16,34 @@ public class Logger{
     private static final String ERROR_FILE = FILE_PATH + "logs/api_error.log";
 
     public static void main(String[] args) throws IOException{
-        BufferedReader file = openErrorLog();
+       /* BufferedReader file = openErrorLog();
         getCountOfErrorTypes(file);
         file.close();
 
         BufferedReader file2 = openErrorLog();
         getMemoryLimitExceededCount(file2);
-        file2.close();
+        file2.close();*/
+
+        BufferedReader file3 = openErrorLog();
+        getDiskSpaceErrorsWithIPAddress(file3);
+        file3.close();
+            openErrorLog("http_access.log");
+        
+        BufferedReader httpAccessOffSet = openErrorLog("http_access.log");
+            getGMTOffset(httpAccessOffSet);
+            httpAccessOffSet.close();
+        
+        BufferedReader httpAccessCode = openErrorLog("http_access.log");
+            getHTTPCode(httpAccessCode);
+            httpAccessCode.close();
+        
+        BufferedReader httpAccessSizes = openErrorLog("http_access.log");
+            getResponseSizes(httpAccessSizes);
+            httpAccessSizes.close();
+
+        BufferedReader httpAccessMethods = openErrorLog("http_access.log");
+            groupHTTPMethodsAndEndPoints(httpAccessMethods);
+            httpAccessMethods.close();
     }
 
     private static void readAPI(){
@@ -98,14 +119,13 @@ public class Logger{
     }
 
     private static void getDiskSpaceErrorsWithIPAddress(BufferedReader file) throws IOException{
-        ArrayList <String> endPointList = new ArrayList<String>();
         String line = "";
         int lineNumber = 0;
+
         while((line = file.readLine()) != null){
             String[] lineValue = line.split(" ");
-
             if(lineValue[5].equals("Disk")){
-                System.out.println("Disk space error found on ine " + lineNumber + " for IP Adress: " + lineValue[3]);
+                System.out.println("The Disk Space error on line " + lineNumber + " for the IP Address: " + lineValue[3]);
             }
             lineNumber = lineNumber + 1;
         }
@@ -114,5 +134,92 @@ public class Logger{
     private static BufferedReader openErrorLog(String fileName) throws IOException{
         BufferedReader br = new BufferedReader(new FileReader(FILE_PATH + "logs/" + fileName));
         return br;
+    }
+
+    private static void getGMTOffset(BufferedReader file)throws IOException{
+        ArrayList <Integer> offsetCountingList = new ArrayList<>();
+        ArrayList <String> offSetList = new ArrayList<String>();
+        String offSet = "";
+        String line = "";
+        int index = 0;
+
+        while((line = file.readLine()) != null){
+            String[] lineValue = line.split(" ");
+            offSet = lineValue[4].replace("]", "");
+            if(offSetList.contains(offSet) == false){
+                offSetList.add(offSet);
+                offsetCountingList.add(1);
+            }
+            else{
+                index = offSetList.indexOf(offSet);
+                offsetCountingList.set(index,(offsetCountingList.get(index) + 1));
+            }
+        }
+        for (int x = 0; x < offSetList.size(); x++){
+            System.out.println("The Time is: " + offSetList.get(x) + " while Count is: " + offsetCountingList.get(x));
+        }
+    }
+
+    private static void getHTTPCode(BufferedReader file)throws IOException{
+        String line = "";
+        int fiveHundredCounting = 0;
+        int fourHundredCounting = 0;
+        int threeHundredCounting = 0;
+        int twoHundredCounting = 0;
+        
+        while((line = file.readLine()) != null){
+            String[] lineValue = line.split(" ");
+            char[] response = lineValue[8].toCharArray();
+
+            switch(response[0]){
+                case '5':
+                    fiveHundredCounting = fiveHundredCounting + 1;
+                    break;
+                case '4':
+                    fourHundredCounting = fourHundredCounting + 1;
+                    break;
+                case '3':
+                    threeHundredCounting = threeHundredCounting + 1;
+                    break;
+                case '2':
+                    twoHundredCounting = twoHundredCounting + 1;
+                    break;
+            }
+        }
+        System.out.println("5xx Errors: " + fiveHundredCounting);
+        System.out.println("4xx Errros: " + fourHundredCounting);
+        System.out.println("3xx Errors: " + threeHundredCounting);
+        System.out.println("2xx Errors: " + twoHundredCounting);
+    }
+
+    private static void getResponseSizes(BufferedReader file)throws IOException{
+        String line = "";
+        int greaterCounting = 0;
+        
+        while((line = file.readLine()) != null){
+            String[] lineValue = line.split(" ");
+            if(Integer.parseInt(lineValue[9]) > 3900){
+                greaterCounting = greaterCounting + 1;
+            }
+        }
+        System.out.print("The amount of log lines have a response size > 3900 is : " + greaterCounting);
+    }
+
+    private static void groupHTTPMethodsAndEndPoints(BufferedReader file)throws IOException{
+        String line = "";
+        ArrayList <String> verbs = new ArrayList <String>();
+        String verb = "";
+
+        while((line = file.readLine()) != null){
+            String [] lineValue = line.split(" ");
+            verb = lineValue[5].replace("\"", "");
+            if(verbs.contains(verb) == false){
+                verbs.add(verb);
+            }
+        } 
+        System.out.println("The Verbs Are: ");
+        for(int x = 0; x < verbs.size(); x++){
+            System.out.println("-" + verbs.get(x));
+        }
     }
 }
