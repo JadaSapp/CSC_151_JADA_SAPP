@@ -96,4 +96,23 @@ public class Logger{
             System.out.println(endPoint);
         }
     }
+
+    private static void getDiskSpaceErrorsWithIPAddress(BufferedReader file) throws IOException{
+        ArrayList <String> endPointList = new ArrayList<String>();
+        String line = "";
+        int lineNumber = 0;
+        while((line = file.readLine()) != null){
+            String[] lineValue = line.split(" ");
+
+            if(lineValue[5].equals("Disk")){
+                System.out.println("Disk space error found on ine " + lineNumber + " for IP Adress: " + lineValue[3]);
+            }
+            lineNumber = lineNumber + 1;
+        }
+    }
+
+    private static BufferedReader openErrorLog(String fileName) throws IOException{
+        BufferedReader br = new BufferedReader(new FileReader(FILE_PATH + "logs/" + fileName));
+        return br;
+    }
 }
