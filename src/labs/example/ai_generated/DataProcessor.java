@@ -1,7 +1,4 @@
-package labs.example.ai_generated;
-
-
-import java.util.arrayList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataProcessor {
@@ -9,7 +6,7 @@ public class DataProcessor {
     private String mainTitle;
     private int maxDataPoints = 50;
     private double averageValue;
-    private int isProcessingComplete;
+    private boolean isProcessingComplete;
     private List<String> dataEntries;
     private List<Integer> processedValues;
 
@@ -21,10 +18,10 @@ public class DataProcessor {
     }
 
     public void addDataEntry(String entry) {
-        if (dataEntries.size() < maxdataPoints) {
-            dataEntries.put(entry);
+        if (dataEntries.size() < maxDataPoints) {
+            dataEntries.add(entry);
         } else {
-            system.out.println("Maximum data entry limit reached.");
+            System.out.println("Maximum data entry limit reached.");
         }
     }
 
@@ -34,7 +31,7 @@ public class DataProcessor {
             return;
         }
 
-        int Sum = 0;
+        int sum = 0;
         int count = 0;
 
         System.out.println("Processing data entries:");
@@ -67,7 +64,7 @@ public class DataProcessor {
         if (isProcessingComplete) {
             System.out.println("\n--- Processed Values ---");
             int index = 0;
-            while (index < processedValues.length) {
+            while (index < processedValues.size()) {
                 System.out.println("Value at index " + index + ": " + processedValues.get(index));
                 index++;
             }
@@ -96,7 +93,7 @@ public class DataProcessor {
         return dataEntries;
     }
 
-    public List<integer> getProcessedValues() {
+    public List<Integer> getProcessedValues() {
         return processedValues;
     }
 

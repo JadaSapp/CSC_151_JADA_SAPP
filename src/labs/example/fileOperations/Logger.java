@@ -16,34 +16,33 @@ public class Logger{
     private static final String ERROR_FILE = FILE_PATH + "logs/api_error.log";
 
     public static void main(String[] args) throws IOException{
-       /* BufferedReader file = openErrorLog();
+        BufferedReader file = openErrorLog();
         getCountOfErrorTypes(file);
         file.close();
 
         BufferedReader file2 = openErrorLog();
         getMemoryLimitExceededCount(file2);
-        file2.close();*/
+        file2.close();
 
         BufferedReader file3 = openErrorLog();
         getDiskSpaceErrorsWithIPAddress(file3);
         file3.close();
-            openErrorLog("http_access.log");
         
         BufferedReader httpAccessOffSet = openErrorLog("http_access.log");
-            getGMTOffset(httpAccessOffSet);
-            httpAccessOffSet.close();
+        getGMTOffset(httpAccessOffSet);
+        httpAccessOffSet.close();
         
         BufferedReader httpAccessCode = openErrorLog("http_access.log");
-            getHTTPCode(httpAccessCode);
-            httpAccessCode.close();
+        getHTTPCode(httpAccessCode);
+        httpAccessCode.close();
         
         BufferedReader httpAccessSizes = openErrorLog("http_access.log");
-            getResponseSizes(httpAccessSizes);
-            httpAccessSizes.close();
+        getResponseSizes(httpAccessSizes);
+        httpAccessSizes.close();
 
         BufferedReader httpAccessMethods = openErrorLog("http_access.log");
-            groupHTTPMethodsAndEndPoints(httpAccessMethods);
-            httpAccessMethods.close();
+        groupHTTPMethodsAndEndPoints(httpAccessMethods);
+        httpAccessMethods.close();
     }
 
     private static void readAPI(){
