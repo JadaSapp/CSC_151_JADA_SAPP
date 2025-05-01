@@ -4,6 +4,8 @@
 @purpose: Final Lab Assignment
 */
 
+package labs.example.finalAssignment;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.io.BufferedReader;
@@ -15,16 +17,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
-import { GoogleGenAI } from "@google/genai";
-
-const ai = new GoogleGenAI({ apiKey: "YOUR_API_KEY" });
-
-async function main() {
-  const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
-    contents: "Explain how AI works in a few words",
-  });
-  console.log(response.text);
+public class finalLab {
+  public static void main(String[] args) throws IOException{
+  }
 }
-
-await main();
