@@ -19,18 +19,18 @@ import java.util.Scanner;
 
 public class FinalLab {
 
-    private static final String apiEndpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+    private static final String API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
     private final String apiKey;
 
     public FinalLab(String apiKey) {
         this.apiKey = apiKey;
     }
-    public String callChatbotAPI(String userInput) throws IOException, URISyntaxException
+    public String ChatBotAPI(String userInput) throws IOException, URISyntaxException
     {
         try
         {
             String requestMethod = "POST";
-            String fullUrlString = apiEndpoint + "?key=" + apiKey;
+            String fullUrlString = API + "?key=" + apiKey;
 
             URL url = new URI(fullUrlString).toURL();
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -38,7 +38,7 @@ public class FinalLab {
             connection.setRequestProperty("Content-Type", "application/json; utf-8");
             connection.setRequestProperty("Accept", "application/json");
             connection.setDoOutput(true);
-
+            
             String jsonInputString = "{\r\n" +
                                 "    \"contents\": [\r\n" +
                                 "      {\r\n" +
@@ -69,7 +69,7 @@ public class FinalLab {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "Error: Unable to get a response from the chatbot API.";
+        return "Gemini Chatbot was unable to get a response, please try again!";
     }
 
     public static void main(String[] args) {
@@ -78,18 +78,18 @@ public class FinalLab {
         Scanner scanner = new Scanner(System.in);
         FinalLab apiClient = new FinalLab(apiKey);
         while (scanner != null) {
-            System.out.println("Enter 'exit' to quit the program.");
+            System.out.println("Welcome to Gemini Chatbot API, enter 'exit' to quit the program.");
             System.out.print("You: ");
             String userInput = scanner.nextLine();
             
             if (userInput.equalsIgnoreCase("exit")) {
-                System.out.println("Exiting the program.");
+                System.out.println("Program is exiting, thank you for using Gemini Chatbot API!");
                 scanner.close();
                 return;
             }
             try {
-                String response = apiClient.callChatbotAPI(userInput);
-                System.out.println("Chatbot response: " + response);
+                String response = apiClient.ChatBotAPI(userInput);
+                System.out.println("Gemini ChatBot response: " + response);
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (URISyntaxException e) {
